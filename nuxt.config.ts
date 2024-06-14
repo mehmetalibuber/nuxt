@@ -2,4 +2,5 @@
 export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: true },
+  modules: ["@sidebase/nuxt-session"],
 });
