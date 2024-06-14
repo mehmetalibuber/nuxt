@@ -1,5 +1,4 @@
 import config from "../config.js";
-import axios from "../axios.js";
 import axios from "axios";
 
 const router = useRoute;
