@@ -1,5 +1,5 @@
-import config from "../config";
-import axios from "axios";
+import axiosConfig from "../axiosConfig.js";
+import config from "../config.js";
 
 // get CRM_HOST from env // dev or prod
 let CRMHost;
@@ -30,11 +30,15 @@ function ReservationComposable() {
     }
     data.webSite = Number(CrmWebsite);
     data.paymentType = Number(CrmPaymentType);
-    const AxiosResponse = await axios.post(`${CRMHost}/reservations`, data, {
-      headers: {
-        Authorization: `Bearer ${AccessToken}`,
-      },
-    });
+    const AxiosResponse = await axiosConfig.post(
+      `${CRMHost}/reservations`,
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${AccessToken}`,
+        },
+      }
+    );
     if (AxiosResponse) {
       if (AxiosResponse.data) {
         RawData = AxiosResponse.data;
@@ -54,7 +58,7 @@ function ReservationComposable() {
     if (!CookieResID.value) {
       return "Reservation ID Error";
     }
-    const AxiosResponse = await axios.get(
+    const AxiosResponse = await axiosConfig.get(
       `${CRMHost}/reservations?code=${code}&webSite=${CrmWebsite}&reservationId=${CookieResID.value}`
     );
     RawData = AxiosResponse.data;
@@ -74,7 +78,7 @@ function ReservationComposable() {
       return "please select check-out date";
     }
     try {
-      const AxiosResponse = await axios.get(
+      const AxiosResponse = await axiosConfig.get(
         `${CRMHost}/estates/free?webSite=${CrmWebsite}&endDate=${CheckOut}&startDate=${CheckIn}&estateId=${EstateID}`
       );
       if (!AxiosResponse) {
@@ -98,7 +102,7 @@ function ReservationComposable() {
       return "Call Back Error";
     }
 
-    const AxiosResponse = await axios.post(`${CRMHost}/contact-us`, data);
+    const AxiosResponse = await axiosConfig.post(`${CRMHost}/contact-us`, data);
     RawData = AxiosResponse.data;
     return RawData;
   };

@@ -1,5 +1,5 @@
-import config from "../config";
-import axios from "axios";
+import axiosConfig from "../axiosConfig.js";
+import config from "../config.js";
 
 // get CRM_HOST from env // dev or prod
 let CRMHost;
@@ -17,7 +17,10 @@ function AuthComposable() {
     if (!data) {
       return "1";
     }
-    const AxiosResponse = await axios.post(`${CRMHost}/auth/register`, data);
+    const AxiosResponse = await axiosConfig.post(
+      `${CRMHost}/auth/register`,
+      data
+    );
     if (AxiosResponse.status) {
       return "0";
     }
@@ -35,7 +38,7 @@ function AuthComposable() {
     if (!data) {
       return "1";
     }
-    const AxiosResponse = await axios.post(`${CRMHost}/auth/login`, data);
+    const AxiosResponse = await axiosConfig.post(`${CRMHost}/auth/login`, data);
     if (AxiosResponse.status) {
       return AxiosResponse.data;
     }
@@ -53,7 +56,7 @@ function AuthComposable() {
     if (!AccessToken) {
       return "Please login again";
     }
-    const AxiosResponse = await axios.get(`${CRMHost}/me/account`, {
+    const AxiosResponse = await axiosConfig.get(`${CRMHost}/me/account`, {
       headers: {
         Authorization: `Bearer ${AccessToken}`,
       },
@@ -75,7 +78,7 @@ function AuthComposable() {
     if (!AccessToken) {
       return "Please login again";
     }
-    const AxiosResponse = await axios.get(`${CRMHost}/me/reservations`, {
+    const AxiosResponse = await axiosConfig.get(`${CRMHost}/me/reservations`, {
       headers: {
         Authorization: `Bearer ${AccessToken}`,
       },
@@ -102,7 +105,10 @@ function AuthComposable() {
       webSite: Website,
     };
 
-    const AxiosResponse = await axios.post(`${CRMHost}/auth/phone`, LoginData);
+    const AxiosResponse = await axiosConfig.post(
+      `${CRMHost}/auth/phone`,
+      LoginData
+    );
     if (AxiosResponse.status) {
       return AxiosResponse.data;
     }
@@ -124,7 +130,7 @@ function AuthComposable() {
     }
     const Website = config.CRM_WEBSITE;
 
-    const AxiosResponse = await axios.get(
+    const AxiosResponse = await axiosConfig.get(
       `${CRMHost}/auth/phone?webSite=${Website}&code=${code}&phone=${number}`
     );
     //console.log(AxiosResponse);
@@ -145,7 +151,7 @@ function AuthComposable() {
     if (!AccessToken) {
       return "Please login again";
     }
-    const AxiosResponse = await axios.get(`${CRMHost}/me/coupons `, {
+    const AxiosResponse = await axiosConfig.get(`${CRMHost}/me/coupons `, {
       headers: {
         Authorization: `Bearer ${AccessToken}`,
       },
@@ -185,7 +191,7 @@ function AuthComposable() {
     if (TrimmedCoupon[TrimmedCoupon.length - 1] == "?") {
       ReplacedCoupon = TrimmedCoupon.slice(0, -1) + ReplacementCharacter;
     }
-    const AxiosResponse = await axios.post(
+    const AxiosResponse = await axiosConfig.post(
       `${CRMHost}/coupons/${ReplacedCoupon} `,
       {
         totalAmount: price,
@@ -214,7 +220,7 @@ function AuthComposable() {
     if (!AccessToken) {
       return "error get user guest";
     }
-    const AxiosResponse = await axios.get(`${CRMHost}/me/guest`, {
+    const AxiosResponse = await axiosConfig.get(`${CRMHost}/me/guest`, {
       headers: {
         Authorization: `Bearer ${AccessToken}`,
       },
