@@ -1,5 +1,6 @@
 import config from "../config.js";
-import axiosConfig from "../axiosConfig.js";
+import axios from "../axios.js";
+import axios from "axios";
 
 const router = useRoute;
 // Config Variables
@@ -29,7 +30,7 @@ function DestinationComposable() {
     if (!PageNumber) {
       PageNumber = 0;
     }
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/estates?webSite=${CrmWebsite}&pageNumber=${PageNumber}`
     );
     RawData = AxiosResponse.data;
@@ -40,7 +41,7 @@ function DestinationComposable() {
     let RawData = null;
     let CheckIn = dates[0];
     let CheckOut = dates[1];
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/estates/${id}?webSite=${CrmWebsite}&endDate=${CheckOut}&startDate=${CheckIn}`
     );
 
@@ -59,7 +60,7 @@ function DestinationComposable() {
   const GetDestinationByIDAsBasic = async (id) => {
     let RawData = null;
     let AxiosResponse = null;
-    AxiosResponse = await axiosConfig.get(
+    AxiosResponse = await axios.get(
       `${CRMHost}/estates/${id}?webSite=${CrmWebsite}`
     );
 
@@ -77,7 +78,7 @@ function DestinationComposable() {
   // Get popular destinations from CRM API
   const GetPopularDestinations = async () => {
     let RawData = null;
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/estates?webSite=${CrmWebsite}&pageNumber=1&pageSize=20`
     );
     RawData = AxiosResponse.data;
@@ -86,7 +87,7 @@ function DestinationComposable() {
   // Get similar destinations from CRM API
   const GetSimilarDestinations = async () => {
     let RawData = null;
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/estates?webSite=${CrmWebsite}`
     );
     RawData = AxiosResponse.data;
@@ -99,7 +100,7 @@ function DestinationComposable() {
     if (city) {
       CityID = city;
     }
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/estates?webSite=${CrmWebsite}&city=${CityID}`
     );
     RawData = AxiosResponse.data;
@@ -112,7 +113,7 @@ function DestinationComposable() {
       CountryID = id;
     }
     let RawData = null;
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/in-estate/cities/${CountryID}`
     );
     RawData = AxiosResponse.data;
@@ -125,7 +126,7 @@ function DestinationComposable() {
     if (city) {
       CityID = city;
     }
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/in-estate/subCities/${CityID}`
     );
     RawData = AxiosResponse.data;
@@ -212,7 +213,7 @@ function DestinationComposable() {
       }
     }
     // try to send request to api
-    const AxiosResponse = await axiosConfig.get(
+    const AxiosResponse = await axios.get(
       `${CRMHost}/estates?webSite=${CrmWebsite}&city=${CityID}&endDate=${CheckOut}&startDate=${CheckIn}${SubCitiesPatters}${SubFilterPatters}&pageNumber=${CurrentPage}`
     );
     RawData = AxiosResponse.data;
@@ -225,14 +226,11 @@ function DestinationComposable() {
     if (!AccessToken) {
       return "Please login again";
     }
-    const AxiosResponse = await axiosConfig.get(
-      `${CRMHost}/properties-and-room`,
-      {
-        headers: {
-          Authorization: `Bearer ${AccessToken}`,
-        },
-      }
-    );
+    const AxiosResponse = await axios.get(`${CRMHost}/properties-and-room`, {
+      headers: {
+        Authorization: `Bearer ${AccessToken}`,
+      },
+    });
     if (AxiosResponse) {
       if (AxiosResponse.data) {
         RawData = AxiosResponse.data;
