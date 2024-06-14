@@ -1,4 +1,4 @@
-import axiosConfig from "../axiosConfig.js";
+import axiosConfig from "@/axiosConfig.js";
 import config from "@/config.js";
 
 // get CRM_HOST from env // dev or prod
