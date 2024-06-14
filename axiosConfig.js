@@ -1,5 +1,5 @@
 import axios from "axios";
-import config from "./config.js";
+import config from "@/config.js";
 
 const instance = axios.create({
   baseURL: config.CRM_HOST, // base url
