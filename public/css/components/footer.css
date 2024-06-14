@@ -1,0 +1,206 @@
+footer {
+  color: #3b65c4;
+  padding: 3% 0 0 0;
+}
+footer .top {
+  padding: 25px 45px;
+  background-color: #fafbfd;
+  border-radius: 8px;
+}
+
+footer .align-self-middle {
+  align-self: center;
+}
+footer .company {
+  margin-top: 25px;
+}
+footer .logo {
+  width: 140px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #3b65c4;
+}
+
+footer h2 {
+  font-size: 1em;
+  color: #3b65c4;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer .tursab-text {
+  font-size: 0.9em;
+}
+footer .warning-text {
+  opacity: 0.7;
+  font-size: 0.7em;
+}
+footer .icon {
+  width: 15px;
+  align-self: center;
+  margin-top: -5px;
+}
+footer a {
+  text-decoration: none;
+  color: #3b65c4;
+}
+footer .border-left {
+  padding-left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+}
+footer .customer-side {
+  display: flex;
+  justify-content: flex-end;
+}
+footer .customer-side figure {
+  width: 150px;
+  position: absolute;
+  margin-top: 18px;
+}
+footer .customer-side figure img {
+  width: 100%;
+  border-radius: 15px;
+}
+footer .logo {
+  width: 180px;
+}
+footer .logo img {
+  width: 100%;
+}
+/*################# footer contracts ####################*/
+footer .contracts {
+  padding: 25px 45px;
+}
+footer .contracts h2 {
+  font-size: 0.9em;
+  padding: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  align-self: center;
+}
+footer .contracts ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+footer .contracts ul li {
+  margin-right: 12px;
+}
+footer .contracts ul li a {
+  font-size: 0.8em;
+}
+footer .payment ul {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
+}
+footer .payment ul li {
+  margin-left: 15px;
+}
+
+footer .payment img {
+  height: 100%;
+  width: 100%;
+}
+footer .middle {
+  margin-top: 50px;
+}
+footer .title {
+  padding-top: 20px;
+}
+footer .tursab-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+footer .tursab-side p {
+  width: 100%;
+}
+/*################### responsive design #####################*/
+@media (max-width: 1400px) {
+  footer .tursab-text {
+    margin-top: 0;
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 1200px) {
+  footer .contracts .c-side,
+  footer .contracts ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  footer .customer-side {
+    display: none;
+  }
+  footer .payment ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  footer .border-left {
+    margin-top: 25px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer .border-left div {
+    width: 100%;
+  }
+}
+@media (max-width: 996px) {
+  footer .contracts ul {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .middle .icons {
+    margin: 4px 0 15px 0;
+  }
+
+  footer .online {
+    display: none;
+  }
+  footer .border-left {
+    margin: 12px 0;
+  }
+
+  footer .payment ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  footer .title {
+    margin-top: 25px;
+  }
+  footer .middle {
+    margin-top: 25px;
+  }
+  footer .company {
+    margin-top: 0;
+  }
+  footer .discover {
+    margin: 6px 0;
+  }
+}
