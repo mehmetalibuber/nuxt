@@ -30,6 +30,9 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ["@vuepic/vue-datepicker"],
+    rollupOptions: {
+      external: ["axios"],
+    },
   },
   i18n: {
     /* module options */

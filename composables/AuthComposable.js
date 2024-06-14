@@ -1,5 +1,5 @@
-import config from "../config.js";
-import axios from "axios ";
+import config from "../config";
+import axios from "axios";
 
 // get CRM_HOST from env // dev or prod
 let CRMHost;

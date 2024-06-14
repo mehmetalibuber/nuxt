@@ -643,7 +643,7 @@ definePageMeta({
   layout: "default",
   middleware: ["auth"],
 });
-//import config from "@/config.js";
+//import config from "../config";
 const { t } = useI18n();
 const Router = useRouter();
 const RuntimeConfig = useRuntimeConfig();

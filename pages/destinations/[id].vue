@@ -230,7 +230,7 @@ definePageMeta({
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 import VueEasyLightbox from "vue-easy-lightbox";
-//import config from "@/config.js";
+//import config from "../config";
 const route = useRoute();
 const router = useRouter();
 const LocalePath = useLocalePath();

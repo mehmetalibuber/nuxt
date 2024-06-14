@@ -4,7 +4,7 @@
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import config from "@/config.js";
+import config from "../config";
 
 const VisibleDestinations = ref([]);
 const props = defineProps({
