@@ -1,5 +1,5 @@
-import config from "@/config.js";
-import axiosConfig from "@/axiosConfig.js";
+import config from "../config.js";
+import axiosConfig from "../axiosConfig.js";
 
 const router = useRoute;
 // Config Variables
