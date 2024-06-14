@@ -429,7 +429,7 @@ definePageMeta({
   middleware: "auth",
 });
 // config file
-import config from "~/config.js";
+import config from "@/config.js";
 // localization for route
 const LocalePath = useLocalePath();
 // cookie user
