@@ -262,7 +262,7 @@ onMounted(async () => {
   const CRMHost = RuntimeConfig.public.CRM_HOST;
   //console.log(CRMHost);
   ImageFilePrefix.value = `${CRMHost}/files/IMAGE/`;
-  ScreenWidth.value = HelperComposable().GetScreenWidth();
+  ScreenWidth.value = 1560;
   // get data of selected destination
   RouteID.value = route.path.split("/").pop() || "";
 
@@ -294,10 +294,8 @@ onMounted(async () => {
         Dates: [],
       };
     }
-    const DefaultCheckIn = HelperComposable().DateFormatter(new Date());
-    const DefaultCheckOut = HelperComposable().DateFormatter(
-      new Date().setDate(new Date().getDate() + 3)
-    );
+    const DefaultCheckIn = "2024-06-19";
+    const DefaultCheckOut = "2024-06-22";
     CookieFilters.value.Dates[0] = DefaultCheckIn;
     CookieFilters.value.Dates[1] = DefaultCheckOut;
     router.go();
