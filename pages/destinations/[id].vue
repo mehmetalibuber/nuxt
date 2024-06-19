@@ -218,7 +218,7 @@
   />
 </template>
 
-<script setup lang="ts">
+<script setup>
 // // disable page payload.json
 // defineRouteRules({
 //   prerender: false,
@@ -269,7 +269,7 @@ onMounted(async () => {
 
   // check cookie
   if (CookieFilters.value) {
-    const DesData = await DestinationComposable().GetDestinationByID(
+    const DesData = await GetDestinationByID(
       RouteID.value,
       CookieFilters.value.Dates
     );
@@ -279,9 +279,7 @@ onMounted(async () => {
         SetEstateInfo();
       } else {
         // router.push(LocalePath("/error"));
-        const DesData = await DestinationComposable().GetDestinationByIDAsBasic(
-          RouteID.value
-        );
+        const DesData = await GetDestinationByIDAsBasic(RouteID.value);
         if (!DesData.data) {
           return router.push(LocalePath("/error"));
         }
@@ -350,6 +348,45 @@ watch(() => {
   Details.value;
   Address.value;
 });
+// Get destinations from CRM API according to destination ID
+const GetDestinationByID = async (id, dates) => {
+  let RawData = null;
+  let CheckIn = dates[0];
+  let CheckOut = dates[1];
+  const AxiosResponse = await axiosConfig.get(
+    `${CRMHost}/estates/${id}?webSite=${CrmWebsite}&endDate=${CheckOut}&startDate=${CheckIn}`
+  );
+
+  if (AxiosResponse.message) {
+    RawData = AxiosResponse.message;
+    return RawData;
+  }
+  if (AxiosResponse.data) {
+    RawData = AxiosResponse.data;
+    return RawData;
+  } else {
+    return AxiosResponse;
+  }
+};
+// Get destinations from CRM API according to destination ID as basic
+const GetDestinationByIDAsBasic = async (id) => {
+  let RawData = null;
+  let AxiosResponse = null;
+  AxiosResponse = await axiosConfig.get(
+    `${CRMHost}/estates/${id}?webSite=${CrmWebsite}`
+  );
+
+  if (AxiosResponse.message) {
+    RawData = AxiosResponse.message;
+    return RawData;
+  }
+  if (AxiosResponse.data) {
+    RawData = AxiosResponse.data;
+    return RawData;
+  } else {
+    return AxiosResponse;
+  }
+};
 </script>
 
 <style>
