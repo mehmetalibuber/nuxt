@@ -15,14 +15,16 @@ let BracketRight = "%5D";
 
 // get CRM_HOST from env // dev or prod
 let CRMHost;
-const CRMHostRes = HelperComposable().GetCRMHost();
-CRMHostRes.then((res) => {
-  CRMHost = res;
-}).catch((error) => {
-  console.error(error);
-});
 
 function DestinationComposable() {
+  const FindCRMHost = async () => {
+    const CRMHostRes = HelperComposable().GetCRMHost();
+    CRMHostRes.then((res) => {
+      CRMHost = res;
+    }).catch((error) => {
+      console.error(error);
+    });
+  };
   // Get destinations from CRM API according to page number
   const GetDestinations = async (PageNumber) => {
     let RawData = null;
@@ -76,6 +78,8 @@ function DestinationComposable() {
   };
   // Get popular destinations from CRM API
   const GetPopularDestinations = async () => {
+    await FindCRMHost();
+
     let RawData = null;
     const AxiosResponse = await axiosConfig.get(
       `${CRMHost}/estates?webSite=${CrmWebsite}&pageNumber=1&pageSize=20`
@@ -107,6 +111,8 @@ function DestinationComposable() {
   };
   // get cities
   const GetCities = async (id) => {
+    await FindCRMHost();
+
     let CountryID = CrmTurkiyeID;
     if (id) {
       CountryID = id;

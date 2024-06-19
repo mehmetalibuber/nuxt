@@ -3,12 +3,6 @@ import config from "../config.js";
 
 // get CRM_HOST from env // dev or prod
 let CRMHost;
-const CRMHostRes = HelperComposable().GetCRMHost();
-CRMHostRes.then((res) => {
-  CRMHost = res;
-}).catch((error) => {
-  console.error(error);
-});
 
 function ReservationComposable() {
   let CrmWebsite = config.CRM_WEBSITE;
