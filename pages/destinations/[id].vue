@@ -168,7 +168,7 @@
         </div>
       </div>
       <!-- similar destinations -->
-      <SimilarDestinations />
+      <!-- <SimilarDestinations /> -->
     </div>
   </div>
   <!-- map modal -->
