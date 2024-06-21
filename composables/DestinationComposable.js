@@ -1,14 +1,10 @@
 import config from "../config.js";
 import axiosConfig from "../axiosConfig.js";
 
-const router = useRoute;
-let CrmWebsite = config.CRM_WEBSITE;
-let CrmTurkiyeID = config.CRM_TURKIYE_ID;
-let CrmAntalyaID = config.CRM_ANTALYA_ID;
+console.log("Config:", config);
+console.log("AxiosConfig:", axiosConfig);
 
-// character  variables
-let BracketLeft = "%5B";
-let BracketRight = "%5D";
+let CrmWebsite = config.CRM_WEBSITE;
 
 function DestinationComposable() {
   // Get popular destinations from CRM API
