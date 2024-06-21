@@ -90,7 +90,7 @@
         "../node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#robots": [
-        "./robots"
+        "./robots.mjs"
       ],
       "#vue-router": [
         "./vue-router-stub"
