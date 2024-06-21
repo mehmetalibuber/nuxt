@@ -168,7 +168,7 @@
         </div>
       </div>
       <!-- similar destinations -->
-      <!-- <SimilarDestinations /> -->
+      <SimilarDestinations />
     </div>
   </div>
   <!-- map modal -->
@@ -218,13 +218,14 @@
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
 // // disable page payload.json
 // defineRouteRules({
 //   prerender: false,
 // });
 definePageMeta({
   layout: "default",
+  middleware: "auth",
 });
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
@@ -268,8 +269,9 @@ onMounted(async () => {
 
   // check cookie
   if (CookieFilters.value) {
-    const DesData = await DestinationComposable().GetDestinationByIDAsBasic(
-      RouteID.value
+    const DesData = await DestinationComposable().GetDestinationByID(
+      RouteID.value,
+      CookieFilters.value.Dates
     );
     if (DesData) {
       if (DesData.data) {

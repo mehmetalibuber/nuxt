@@ -9,11 +9,11 @@
     <Meta name="description" content="Geccele destinations"> </Meta>
   </Head>
   <!-- Reservation Block -->
-  <!-- <Search-Filter
+  <Search-Filter
     @EmitFilterDestination="SetStateDestinations"
     @EmitTotalElements="SetTotalElements"
     @EmitCurrentPage="SetCurrentPage"
-  /> -->
+  />
   <!-- <Reservation /> -->
   <div class="container-fluid homes-page">
     <div v-if="CookieInProgress">
@@ -200,7 +200,7 @@
 <script setup>
 definePageMeta({
   layout: "default",
-  
+  middleware: "auth",
 });
 // router
 const Router = useRouter();
@@ -255,7 +255,9 @@ const RenderData = async () => {
   await FilterDestinationData();
 };
 const FilterDestinationData = async () => {
-  const FilteredData = await DestinationComposable().GetPopularDestinations();
+  const FilteredData = await DestinationComposable().GetFilteredDestinations(
+    CookieFilters.value
+  );
   StateDestinations.value = Destinations.value = FilteredData.data.content;
   CookieInProgress.value = false;
 };

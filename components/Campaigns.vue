@@ -50,7 +50,7 @@ onMounted(() => {
 const SetCampaigns = () => {
   if (ScreenWidth.value >= 1200) {
     Campaigns.value = [
-      { url: "/assets/campaigns/webP/campaigns-2.webp" },
+      // { url: "/assets/campaigns/webP/campaigns-2.webp" },
       { url: "/assets/campaigns/webP/campaigns-1.webp" },
       { url: "/assets/campaigns/webP/campaigns-3.webp" },
       { url: "/assets/campaigns/webP/campaigns-4.webp" },
@@ -58,7 +58,7 @@ const SetCampaigns = () => {
   }
   if (ScreenWidth.value < 1200 && ScreenWidth.value > 750) {
     Campaigns.value = [
-      { url: "/assets/campaigns/md/campaigns-2.jpg" },
+      // { url: "/assets/campaigns/md/campaigns-2.jpg" },
       { url: "/assets/campaigns/md/campaigns-1.jpg" },
       { url: "/assets/campaigns/md/campaigns-3.jpg" },
       { url: "/assets/campaigns/md/campaigns-4.jpg" },
@@ -66,7 +66,7 @@ const SetCampaigns = () => {
   }
   if (ScreenWidth.value <= 750) {
     Campaigns.value = [
-      { url: "/assets/campaigns/xs/campaigns-2.jpg" },
+      // { url: "/assets/campaigns/xs/campaigns-2.jpg" },
       { url: "/assets/campaigns/xs/campaigns-1.jpg" },
       { url: "/assets/campaigns/xs/campaigns-3.jpg" },
       { url: "/assets/campaigns/xs/campaigns-4.jpg" },

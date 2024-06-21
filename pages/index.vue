@@ -8,7 +8,7 @@
     <Select-City />
   </div>
   <div class="container px-0 mt-0">
-    <!-- <Campaigns /> -->
+    <Campaigns />
   </div>
   <!-- <section class="main-section">
     <div class="container">

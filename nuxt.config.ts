@@ -25,14 +25,46 @@ export default defineNuxtConfig({
       script: [{ src: "/lib/Bootstrap/bootstrap.bundle.min.js" }],
     },
   },
-
-  modules: ["@nuxtjs/i18n", "nuxt-snackbar", "@nuxt/image", "@nuxtjs/robots"],
-
+  generate: {
+    // routes: async () => {
+    //   const res = await fetch(
+    //     "https://testcrm.geccele.com/estates?webSite=1&pageNumber=0&pageSize=20"
+    //   );
+    //   const destinations = await res.json();
+    //   console.log(destinations);
+    //   return destinations.map(
+    //     (destination) => `/destinations/${destination.id}`
+    //   );
+    // },
+  },
+  nitro: {
+    firebase: {
+      gen: 2,
+    },
+    prerender: {
+      // ignore: ["/destinations/[id]"],
+    },
+  },
+  experimental: {
+    asyncContext: true,
+  },
+  routeRules: {
+    // "/destinations/**": { prerender: false },
+  },
+  modules: [
+    "@nuxtjs/i18n",
+    "nuxt-snackbar",
+    "@nuxt/image",
+    "@nuxtjs/robots",
+    // "nuxt-vue3-google-signin",
+  ],
+  // googleSignIn: {
+  //   clientId:
+  //     "318600910259-sa8pjrofq22bgsvhgldaatefmb281l59.apps.googleusercontent.com",
+  // },
+  plugins: [],
   build: {
     transpile: ["@vuepic/vue-datepicker"],
-    rollupOptions: {
-      external: ["axios"],
-    },
   },
   i18n: {
     /* module options */
@@ -74,6 +106,7 @@ export default defineNuxtConfig({
       GECCELE_IFRAME_URL: process.env.GECCELE_IFRAME_URL,
     },
   },
+  router: { options: {} },
   snackbar: {
     bottom: true,
     left: true,

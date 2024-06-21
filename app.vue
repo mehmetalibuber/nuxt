@@ -12,7 +12,7 @@ const LoadGoogleAnalytics = async () => {
     setTimeout(() => {
       const Scripts = [
         {
-          src: "https://www.googletagmanager.com/gtag/js?id=G-9LEF8C3X3P ",
+          src: "https://www.googletagmanager.com/gtag/js?id=G-9LEF8C3X3P",
           async: true,
         },
         {

@@ -77,7 +77,7 @@
 <script setup>
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
-import config from "../config";
+import config from "~/config.js";
 const Destinations = ref([]);
 const DesData = ref({});
 const ImageFilePrefix = ref("");

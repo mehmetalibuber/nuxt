@@ -14,6 +14,8 @@
         :auto-range="AutoRange"
         :placeholder="$t('CheckInOut')"
         class="d-picker"
+        locale="tr"
+        model-type="yyyy-MM-dd"
       >
       </VueDatePicker>
     </div>
@@ -38,7 +40,6 @@
               >
             </div>
           </div>
-
           <div class="row">
             <div class="col">
               <span>{{ $t("TaxRate") }}:</span>
@@ -101,6 +102,7 @@
           :title="$t('Reservation')"
           @click="CheckAvailability(1)"
           v-if="ShowPaymentStep"
+          :disabled="InProgress"
         >
           {{ $t("Reservation") }}
         </button>
@@ -170,8 +172,7 @@ const props = defineProps({
 });
 const { t } = useI18n();
 const Router = useRouter();
-const InProgress = useCookie("InProgress");
-InProgress.value = ref(false);
+const InProgress = ref(false);
 // cookie for filters
 const CookieFilters = useCookie("Filters");
 // state for estate details
@@ -218,12 +219,17 @@ const CheckAvailability = async (item) => {
         if (ShowPaymentStep.value) {
           ShowPaymentStep.value = false;
         }
+        InProgress.value = false;
         return (ErrorMessage.value = `* ${t(
           "PleaseSelectCheckInCheckOutDates"
         )}`);
       }
-      const CheckIn = HelperComposable().DateFormatter(Dates.value[0]);
-      const CheckOut = HelperComposable().DateFormatter(Dates.value[1]);
+      // const CheckIn = HelperComposable().DateFormatter(Dates.value[0]);
+      // const CheckOut = HelperComposable().DateFormatter(Dates.value[1]);
+      // CookieFilters.value.Dates[0] = CheckIn;
+      // CookieFilters.value.Dates[1] = CheckOut;
+      const CheckIn = Dates.value[0];
+      const CheckOut = Dates.value[1];
       CookieFilters.value.Dates[0] = CheckIn;
       CookieFilters.value.Dates[1] = CheckOut;
       //send req.
@@ -252,22 +258,23 @@ const CheckAvailability = async (item) => {
           if (EstateMinAccommodation.value > TotalNights.value) {
             ShowInfoSection.value = false;
             ShowPaymentStep.value = false;
-            ////////////////
-            const modalElement = document.getElementById(
-              "checkAvailabilityModal"
-            );
-            const modal = new bootstrap.Modal(modalElement);
-            modal.show(); //open modal
-            ///////////////
+            ///// alert modal /////
+            // const modalElement = document.getElementById("checkAvailabilityModal");
+            // const modal = new bootstrap.Modal(modalElement);
+            //  modal.show(); //open modal
+            ///// alert modal /////
+            InProgress.value = false;
             return (ErrorMessage.value = `* Bu mülk için min. konaklama süresi ${EstateMinAccommodation.value} gecedir.`);
           }
           ShowInfoSection.value = true;
           ShowPaymentStep.value = true;
+          InProgress.value = false;
         } else {
           if (ShowPaymentStep.value) {
             ShowPaymentStep.value = false;
           }
           ShowInfoSection.value = false;
+          InProgress.value = false;
           return (ErrorMessage.value = `* ${CheckReq}`);
         }
       }

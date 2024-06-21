@@ -4,7 +4,8 @@
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import config from "../config";
+//import config from "~/config.js";
+const RuntimeConfig = useRuntimeConfig();
 
 const VisibleDestinations = ref([]);
 const props = defineProps({
@@ -21,7 +22,8 @@ const MapRef = ref(null);
 let L;
 
 onMounted(async () => {
-  ImageFilePrefix.value = `${config.CRM_HOST}/files/IMAGE/`;
+  const CRMHost = RuntimeConfig.public.CRM_HOST;
+  ImageFilePrefix.value = `${CRMHost}/files/IMAGE/`;
   L = await import("leaflet");
   MapRef.value = L.map(MapRef.value).setView([36.8841, 30.7056], 10);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
@@ -39,6 +41,7 @@ const AddMarkers = () => {
     return;
   }
   props.Destinations.forEach((destination) => {
+    // console.log(destination)
     const {
       id,
       name,
@@ -76,7 +79,7 @@ const AddMarkers = () => {
     marker.bindPopup(
       `
         <div class="map-popup">
-          <img class="map-thumb" src="${ImageURL}"/>
+          <img class="map-thumb" src="${ImageURL}" loading="lazy"/>
           <b style="padding: 4px 0 0 0; position: relative; display: block;">${name}</b>
           <div style="margin:4px 0">
             <span> ✓ ${squareMeters} m&sup2;</span>&nbsp;<span> ✓ ${numberOfPeople} kişi</span>
