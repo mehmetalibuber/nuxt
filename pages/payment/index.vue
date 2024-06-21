@@ -1245,5 +1245,5 @@ const CodeVerify = async () => {
 </script>
 
 <style scoped>
-@import url("/assets/css/paymentPage.css");
+/* @import url("/assets/css/paymentPage.css"); */
 </style>
