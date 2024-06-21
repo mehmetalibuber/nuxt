@@ -1,5 +1,5 @@
 {
-  "functions": { "source": "dist", "runtime": "nodejs20" },
+  "functions": { "source": ".output/server", "runtime": "nodejs20" },
   "hosting": {
     "site": "demo2-ultof",
     "public": ".output/public",

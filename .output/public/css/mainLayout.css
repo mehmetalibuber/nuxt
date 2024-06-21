@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "TTCommons";
+  src: local("TTCommons"),
+    url("../fonts/TTCommons-Regular.otf") format("opentype");
+}
+
+body {
+  font-family: TTCommons;
+  font-size: 1em;
+}
+.form-control {
+  border-color: #ebebeb;
+}
+.form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.img-thumbnail {
+  border: none;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+.form-check-input,
+.form-check-label {
+  cursor: pointer;
+}
+/* Alt scrollbar'ı için özel stillendirme */
+::-webkit-scrollbar {
+  width: 3px;
+  /* scrollbar'ın genişliği */
+  border-radius: 6px;
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #214280;
+  /* scrollbar çubuğunun rengi */
+  border-radius: 6px;
+  /* scrollbar çubuğunun kenar yarıçapı */
+  border: 0px solid #ccc;
+  /* çubuğun etrafında beyaz bir kenar oluşturur */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #214280;
+  /* hover durumunda scrollbar çubuğunun rengi */
+}
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  /* scrollbar çubuğunun kenar yarıçapı */
+  background-color: #ebebeb;
+  /* scrollbar'ın arkaplan rengi */
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #ebebeb;
+  /* hover durumunda scrollbar'ın arkaplan rengi */
+}

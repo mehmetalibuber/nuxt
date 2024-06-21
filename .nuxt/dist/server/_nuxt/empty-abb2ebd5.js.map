@@ -1,0 +1,1 @@
+{"version":3,"file":"empty-abb2ebd5.js","sources":["../../../../layouts/empty.vue"],"sourcesContent":["<template>\r\n  <div class=\"empty-layout\">\r\n    <slot />\r\n  </div>\r\n</template>\r\n"],"names":[],"mappings":";;;;AACO,SAAA,eAAA,MAAA,OAAA,SAAA,QAAoB;;;;;;;;;;;;"}

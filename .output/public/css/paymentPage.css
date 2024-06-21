@@ -1,0 +1,436 @@
+@font-face {
+  font-family: "TTCommonsLight";
+  src: local("TTCommons"),
+    url("../fonts/TTCommons-Light.otf") format("opentype");
+}
+/* ################################ */
+.step-content {
+  /* display: none; */
+}
+.progress-container {
+  padding: 0 3rem;
+}
+.progress-container .step {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 25px;
+}
+.step-content.active {
+  display: block;
+}
+.progress-container .step.active {
+  /* font-weight: bold; */
+}
+.progress-container .step div:first-child {
+  padding: 10px;
+  position: relative;
+  color: #170404;
+  background-color: #ebebeb;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-direction: row;
+  transition: 1s ease all;
+}
+.progress-container .step div:last-child {
+  margin-left: 8px;
+  font-size: 16px;
+}
+.progress-container .step.active div:first-child {
+  background-color: #214280;
+  color: #fff;
+}
+/* ########## res-card ########### */
+.res-card {
+  border: 1px solid #ebebeb;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  border-radius: 12px;
+  padding: 15px;
+}
+.res-card h2 {
+  font-size: 1.4em;
+}
+.res-card img {
+  border-radius: 4px;
+  padding: 0;
+  height: 160px;
+  width: 250px;
+  object-fit: cover;
+}
+.res-card .col-lg-9 {
+  display: flex;
+  align-items: center;
+}
+.res-card .col-lg-9 div p {
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* ######### summary-section ########## */
+.summary-section {
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 15px;
+}
+.check-in-box {
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 5px;
+}
+.check-in-box .col:first-child {
+  border-right: 1px solid #ebebeb;
+}
+.summary-items {
+  display: flex;
+  justify-content: space-between;
+}
+.summary-items .row .col-lg-6 {
+  padding: 0 6px;
+}
+.summary-items .row .col:last-child {
+  text-align: end;
+}
+.total-price {
+  color: #214280;
+}
+.payment-btn {
+  background-color: #214280;
+  color: #fff;
+  padding: 6px 32px;
+}
+.member-btn {
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  color: #000;
+  padding: 6px 32px;
+}
+/* guest-left */
+.guest-left select {
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+}
+.guest-left label {
+  font-size: 15px;
+  color: #214280;
+  font-family: TTCommonsLight;
+}
+.guest-left input::placeholder {
+  font-size: 14px;
+  color: #9a9999;
+}
+.guest-left h2,
+.user-guests h2 {
+  font-size: 16px;
+  color: #214280;
+}
+.guest-left-warning {
+  font-family: "TTCommonsLight";
+}
+.guest-left form {
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+  padding: 15px;
+}
+.guest-left form .form-control {
+  margin-top: 6px;
+}
+.guest-left .col-lg-10 {
+  padding-left: 0;
+}
+
+/* ########## code input ########## */
+.code-input {
+  width: 60px;
+  height: 60px;
+}
+#codeModal .modal-footer {
+  border: none;
+  padding: 0;
+}
+#codeModal .modal-content {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+}
+#codeModal .modal-title {
+  font-size: 16px;
+}
+.phone-space select {
+  height: 38px;
+  margin-top: 6px;
+  width: 45px;
+  padding-right: 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+}
+/*#################### payment iframe start ###################*/
+#payment-iframe {
+  width: 100%;
+  min-height: 135vh;
+  height: 100%;
+  border: 1px solid #ebebeb;
+  /* padding: 25px; */
+  border-radius: 12px;
+}
+.code-apply {
+  cursor: pointer;
+  color: #33a776;
+  font-size: 1em;
+  margin-left: -10px;
+}
+/*#################### payment iframe end ###################*/
+
+/* ############ coupon codes ############### */
+.coupons select,
+.coupons button,
+.coupons input[type="text"] {
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+}
+/* ################### user guests ########################### */
+.user-guests {
+  border: 1px solid #ebebeb;
+  padding: 15px;
+  border-radius: 6px;
+}
+.user-guests .select-side {
+  min-height: 60px;
+}
+
+.user-guests select {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+#user-guests-input {
+  /* border: 1px solid #ebebeb; */
+  margin-top: 15px;
+  border-radius: 6px;
+  /* padding: 8px 12px; */
+}
+#user-guests-input span {
+  font-size: 12px;
+}
+
+.user-guests .accordion-header {
+  display: flex;
+  align-items: center;
+}
+.user-guests button,
+.user-guests .form-select {
+  width: 100%;
+  height: 40px;
+  padding: 6px 22px;
+  border-radius: 6px !important;
+  color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #ebebeb;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.user-guests .accordion-button {
+  width: 100%;
+  height: 60px;
+  padding: 6px 22px;
+  border-radius: 6px !important;
+  color: #000;
+}
+.user-guests #accordionGuests {
+  width: 100%;
+}
+.user-guests .accordion-body {
+  position: absolute;
+  margin-top: 5px;
+  border-radius: 6px;
+  height: auto;
+  min-height: 50px;
+  max-height: 250px;
+  width: 300px;
+  padding: 15px;
+  background-color: #fff;
+  overflow-y: auto;
+  border: 1px solid #ebebeb;
+}
+.user-guests .accordion-button::after {
+  margin-left: 15px;
+}
+.user-guests .accordion-button:focus {
+  box-shadow: none;
+}
+.user-guests .accordion-button:not(.collapsed) {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+.user-guests .h-40 {
+  font-size: 14px;
+  height: 40px;
+}
+.user-guests .h-40.form-control::placeholder {
+  opacity: 0.5;
+  font-size: 14px;
+}
+.user-guests .form-select:focus {
+  border-color: #ebebeb;
+  outline: 0;
+  box-shadow: none;
+}
+.user-guests .del-btn {
+  opacity: 0.2;
+  border: 1px solid #cbcbcb;
+  border-radius: 6px;
+}
+.user-guests button img {
+  width: 13px;
+  opacity: 0.5;
+  margin-left: 6px;
+}
+.user-guests #user-guests-input hr {
+  margin: 6px 0;
+}
+.user-guests #user-guests-input .form-check {
+  margin-bottom: 0;
+}
+.user-guests #user-guests-input label {
+  font-size: 12px;
+}
+.user-guests #user-guests-input .col-xl-3,
+.user-guests #user-guests-input .col-xl-2 {
+  align-self: center;
+}
+/* form check input*/
+.form-check-input {
+  border: 1px solid #cbcbcb;
+}
+#user-guests-input .form-check-input {
+  height: 15px;
+  width: 30px;
+}
+.form-check-input:checked {
+  background-color: #214280;
+  border: 1px solid #214280;
+}
+.form-check-input:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: none;
+}
+/*################## responsive design #####################*/
+@media (max-width: 1400px) {
+  .coupons #selected-coupon {
+    width: 150px;
+  }
+}
+@media (max-width: 1200px) {
+  .code-apply {
+    margin-left: 0;
+  }
+  .user-guests .h-40 {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 996px) {
+  .progress-container .step div:first-child {
+    width: 25px;
+    height: 25px;
+  }
+  .progress-container .step div:last-child {
+    font-size: 14px;
+  }
+  .progress-container {
+    padding: 0;
+  }
+  .res-card h2 {
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+  .res-card img {
+    border-radius: 4px;
+    padding: 0;
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .guest-left .form-group {
+    margin-top: 5px;
+  }
+  .summary-section {
+    margin-top: 20px;
+  }
+  .guest-left label {
+    font-size: 14px;
+  }
+  /*#################### payment iframe start ###################*/
+  #payment-iframe {
+    width: 100%;
+    min-height: 120vh;
+    height: 100%;
+    border: 1px solid #ebebeb;
+    padding: 0;
+    border-radius: 12px;
+  }
+  /*#################### payment iframe end ###################*/
+  .phone-space select {
+    padding: 6px;
+    width: max-content;
+  }
+  .phone-space .col-lg-9 {
+    margin-top: 6px;
+  }
+  .code-apply {
+    margin-top: 6px;
+  }
+  .user-guests .accordion-button {
+    width: 100%;
+    height: auto;
+    padding: 6px 22px;
+    border-radius: 6px !important;
+    color: #000;
+  }
+  .user-guests .col-lg-3 {
+    margin-top: 15px;
+  }
+  .user-guests .accordion-button::after {
+    margin-left: auto;
+  }
+  .user-guests .select-side button {
+    text-align: left;
+    margin-top: 6px;
+  }
+  .user-guests .user-box {
+    padding: 0;
+    margin: 0;
+  }
+  #user-guests-input {
+    padding: 0;
+    margin: 0;
+  }
+  .user-guests .col-2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .guest-left .col-lg-10 {
+    padding-left: 12px;
+  }
+  .user-guests select {
+    margin-top: 6px;
+  }
+}

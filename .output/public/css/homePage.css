@@ -1,0 +1,131 @@
+.main-section {
+  height: 90vh;
+  background-image: url("/assets/home/main-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.main-section .main-box {
+  background-color: #fff;
+  padding: 55px;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 170px;
+  margin-right: 150px;
+}
+.main-section .main-box span {
+  font-size: 100px;
+  position: absolute;
+  margin-left: -35px;
+  margin-top: -75px;
+  color: #214280;
+}
+.main-section h2 {
+  font-weight: 900;
+  font-size: 2.8em;
+}
+.main-section p {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+/* ########## home residences ########### */
+.home-residences figure {
+  padding: 0;
+  margin: 0;
+}
+.home-residences img {
+  object-fit: cover;
+  border-radius: 12px;
+}
+.home-residences .left img {
+  border-top-left-radius: 180px;
+  height: 450px;
+  width: 100%;
+}
+.home-residences .right img {
+  height: 225px;
+  width: 100%;
+}
+.home-residences .right .col-lg-6:last-child img {
+  border-bottom-right-radius: 180px;
+}
+.home-residences span {
+  color: #214280;
+}
+.home-residences h2 {
+  font-size: 2.2em;
+}
+
+/* ########## main section 2 ########### */
+.main-section-2 {
+  margin-top: 75px;
+  height: 90vh;
+  background-image: url("/assets/home/main-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.main-section-2 .main-box {
+  background-color: #fff;
+  background-color: #fff;
+  padding: 55px;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 170px;
+  margin-right: 150px;
+}
+.main-section-2 .main-box span {
+  font-size: 100px;
+  position: absolute;
+  margin-left: -35px;
+  margin-top: -75px;
+  color: #214280;
+}
+.main-section-2 h2 {
+  font-weight: 900;
+  font-size: 2.8em;
+}
+.main-section-2 p {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/*############### responsive design ################*/
+@media (max-width: 1300px) {
+  .main-section {
+    background-position: right;
+  }
+  .main-section .main-box {
+    border-bottom-right-radius: 140px;
+    margin-right: 0px;
+  }
+  .main-section h2 {
+    font-size: 2.2em;
+  }
+  .main-section p {
+    font-size: 1.1em;
+  }
+  .main-section-2 .main-box {
+    border-bottom-right-radius: 140px;
+    margin-right: 0px;
+  }
+  .main-section-2 h2 {
+    font-size: 2.2em;
+  }
+  .main-section-2 p {
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 996px) {
+  .home-residences .left img {
+    border-top-left-radius: 180px;
+    height: 350px;
+  }
+  .home-residences .right .col-lg-6:nth-child(n + 3) {
+    display: none;
+  }
+}
