@@ -1,6 +1,6 @@
 <template>
   <div class="default-layout">
-    <TopHeader />
+    <!-- <TopHeader /> -->
     <Header />
     <slot />
     <NuxtSnackbar />
