@@ -1,5 +1,0 @@
-const Campaigns_vue_vue_type_style_index_0_lang = ".campaigns-section{margin:45px auto}.campaigns-section .vueperslide__content-wrapper{border-radius:12px;height:220px!important;overflow:hidden;width:100%}.campaigns-section .vueperslides__parallax-wrapper{padding-bottom:22%!important}.campaigns-section .vueperslide__content-wrapper img{border:1px solid #ebebeb;border-radius:12px;height:220px;-o-object-fit:cover;object-fit:cover;width:100%}.campaigns-section .vueperslide .b-content{width:100%}.campaigns-section .vueperslides__bullet--active .default{background-color:#000;height:6px;width:6px}.campaigns-section .vueperslides__bullet .default{height:13px;width:13px}.campaigns-section .vueperslides__arrow{top:40%}.campaigns-section .vueperslides__arrow svg{padding:25px}@media (max-width:1400px){.campaigns-section .vueperslides__bullets{bottom:-30px}}@media (max-width:996px){.campaigns-section .vueperslides__parallax-wrapper{height:350px}.campaigns-section .vueperslides__arrows{display:none}.campaigns-section .vueperslides__bullets{bottom:0}}";
-export {
-  Campaigns_vue_vue_type_style_index_0_lang as default
-};
-//# sourceMappingURL=index-styles-2.mjs-e63787b0.js.map

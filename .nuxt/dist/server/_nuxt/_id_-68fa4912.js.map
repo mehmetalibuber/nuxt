@@ -1,1 +1,0 @@
-{"version":3,"file":"_id_-68fa4912.js","sources":["../../../../pages/blog/[id].vue"],"sourcesContent":["<script setup lang=\"ts\">\r\nconst route = useRoute();\r\n</script>\r\n\r\n<template>\r\n  <div class=\"text-center p-4 op-50\">Current route: {{ route.path }}</div>\r\n</template>\r\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;AACA,UAAM,QAAQ;;;;;;;;;;;;"}

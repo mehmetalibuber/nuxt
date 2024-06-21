@@ -41,11 +41,23 @@ export default defineNuxtConfig({
   nitro: {
     firebase: {
       gen: 2,
+      nodeVersion: "18",
     },
     prerender: {
       // ignore: ["/destinations/[id]"],
     },
     preset: "node-server",
+    // output: {
+    //   serverDir: ".output/server",
+    //   publicDir: ".output/public",
+    // },
+    // rollupConfig: {
+    //   output: {
+    //     entryFileNames: "[name].js",
+    //       chunkFileNames: "[name].js",
+    //     format: "cjs",
+    //   },
+    // },
   },
   experimental: {
     asyncContext: true,
