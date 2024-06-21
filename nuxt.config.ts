@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@": resolve(__dirname, "/"),
     assets: "/<rootDir>/assets",
   },
+  target: "server",
   app: {
     head: {
       htmlAttrs: {
@@ -44,6 +45,7 @@ export default defineNuxtConfig({
     prerender: {
       // ignore: ["/destinations/[id]"],
     },
+    preset: "node-server",
   },
   experimental: {
     asyncContext: true,
