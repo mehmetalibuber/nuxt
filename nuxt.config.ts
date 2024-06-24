@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     "@": resolve(__dirname, "/"),
     assets: "/<rootDir>/assets",
   },
-  target: "server",
   app: {
     head: {
       htmlAttrs: {
@@ -26,18 +25,7 @@ export default defineNuxtConfig({
       script: [{ src: "/lib/Bootstrap/bootstrap.bundle.min.js" }],
     },
   },
-  generate: {
-    // routes: async () => {
-    //   const res = await fetch(
-    //     "https://testcrm.geccele.com/estates?webSite=1&pageNumber=0&pageSize=20"
-    //   );
-    //   const destinations = await res.json();
-    //   console.log(destinations);
-    //   return destinations.map(
-    //     (destination) => `/destinations/${destination.id}`
-    //   );
-    // },
-  },
+
   nitro: {
     firebase: {
       gen: 2,
@@ -46,7 +34,7 @@ export default defineNuxtConfig({
     prerender: {
       // ignore: ["/destinations/[id]"],
     },
-    preset: "node-server",
+    // preset: "node-server",
     // output: {
     //   serverDir: ".output/server",
     //   publicDir: ".output/public",
