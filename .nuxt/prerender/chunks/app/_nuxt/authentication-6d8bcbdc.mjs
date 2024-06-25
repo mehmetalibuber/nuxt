@@ -1,0 +1,73 @@
+import { _ as __nuxt_component_0, a as __nuxt_component_1, b as _sfc_main$2, c as __nuxt_component_3, d as __nuxt_component_5 } from './Footer-a70cb120.mjs';
+import { mergeProps, useSSRContext } from 'file://C:/Projects/nuxt/node_modules/vue/index.mjs';
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot } from 'file://C:/Projects/nuxt/node_modules/vue/server-renderer/index.mjs';
+import { _ as _export_sfc } from './_plugin-vue_export-helper-cc2b3d55.mjs';
+import '../../renderer.mjs';
+import 'node:async_hooks';
+import 'file://C:/Projects/nuxt/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import 'file://C:/Projects/nuxt/node_modules/h3/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/devalue/index.js';
+import 'file://C:/Projects/nuxt/node_modules/ufo/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/@unhead/ssr/dist/index.mjs';
+import '../../nitro/nitro-prerenderer.mjs';
+import 'file://C:/Projects/nuxt/node_modules/ofetch/dist/node.mjs';
+import 'file://C:/Projects/nuxt/node_modules/destr/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unenv/runtime/fetch/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/hookable/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/scule/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/klona/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/defu/dist/defu.mjs';
+import 'file://C:/Projects/nuxt/node_modules/ohash/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unstorage/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unstorage/drivers/fs.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unstorage/drivers/memory.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unstorage/drivers/lru-cache.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unstorage/drivers/fs-lite.mjs';
+import 'file://C:/Projects/nuxt/node_modules/radix3/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unctx/dist/index.mjs';
+import 'node:fs';
+import 'node:url';
+import 'file://C:/Projects/nuxt/node_modules/pathe/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/ipx/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/unhead/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/@unhead/shared/dist/index.mjs';
+import '../server.mjs';
+import 'file://C:/Projects/nuxt/node_modules/vue-router/dist/vue-router.node.mjs';
+import 'file://C:/Projects/nuxt/node_modules/vue3-snackbar/dist/vue3-snackbar.js';
+import 'file://C:/Projects/nuxt/node_modules/vue-devtools-stub/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/cookie-es/dist/index.mjs';
+import 'file://C:/Projects/nuxt/node_modules/is-https/dist/index.mjs';
+import './nuxt-link-01469011.mjs';
+import './composables-2c3efc9a.mjs';
+import './cookie-daf610f3.mjs';
+import './call-center-3ecc2d8e.mjs';
+import './logout-de4be0e0.mjs';
+import './nuxt-img-9957c8cb.mjs';
+import './index-6a088328.mjs';
+
+const _sfc_main = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+  const _component_TopHeader = __nuxt_component_0;
+  const _component_Header = __nuxt_component_1;
+  const _component_NuxtSnackbar = _sfc_main$2;
+  const _component_Cookie_Accept = __nuxt_component_3;
+  const _component_Footer = __nuxt_component_5;
+  _push(`<div${ssrRenderAttrs(mergeProps({ class: "custom-layout" }, _attrs))}>`);
+  _push(ssrRenderComponent(_component_TopHeader, null, null, _parent));
+  _push(ssrRenderComponent(_component_Header, null, null, _parent));
+  ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
+  _push(ssrRenderComponent(_component_NuxtSnackbar, null, null, _parent));
+  _push(ssrRenderComponent(_component_Cookie_Accept, null, null, _parent));
+  _push(ssrRenderComponent(_component_Footer, null, null, _parent));
+  _push(`</div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("layouts/authentication.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const authentication = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+
+export { authentication as default };
+//# sourceMappingURL=authentication-6d8bcbdc.mjs.map
