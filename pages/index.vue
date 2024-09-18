@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <Title>Luxury Residences | Monthly Stay | Geccele</Title>
+    <Title>hello mabcodes</Title>
     <Meta name="description" content="Test content"> </Meta>
   </Head>
   <!-- Reservation Block -->

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "demo1-ultof",
+    "site": "demo2-ultof",
     "public": "/.output/public",
     "ignore": [
       "firebase.json",
