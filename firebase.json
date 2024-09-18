@@ -1,13 +1,11 @@
 {
   "hosting": {
-    "site": "geccele-87847",
+    "site": "demo1-ultof",
     "public": "/.output/public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "/destination/**",
-        "destination": "/index.html"
-      }
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ]
   }
 }
